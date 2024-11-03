@@ -137,7 +137,7 @@ const Home = () => {
                     </section>
                     <section className="h-auto w-full flex flex-col md:flex-row items-center md:items-top justify-center mt-20 mb-20 px-4">
                         <span className="text-2xl md:text-5xl font-bold text-center md:text-right text-tertiary w-full md:w-1/2 mb-8 md:mb-0">
-                            Unlocking Tomorrow's <br />
+                            Unlocking Tomorrow&apos;s <br />
                             Technology Today!
                         </span>
                         <span className="text-base md:text-2xl text-center md:text-left text-foreground md:ml-20 w-full md:w-1/2">
@@ -148,19 +148,19 @@ const Home = () => {
                             and Engineering. <br />
                             <br />
                             At Nexus, we believe in pushing boundaries <br />
-                            and challenging the status quo. Whether you're a
+                            and challenging the status quo. Whether you&apos;re a
                             coding ninja, <br />a design guru, or just someone
                             who loves to brainstorm <br />
-                            wild ideas, there's a place for you here. We're not
+                            wild ideas, there&apos;s a place for you here. We&apos;re not
                             just a club;
-                            <br /> we're a movement, and we're on a mission to
+                            <br /> we&apos;re a movement, and we&apos;re on a mission to
                             change the world, <br />
                             one crazy idea at a time! <br />
                             <br />
                             Join us for workshops, hackathons, and events <br />
                             that will make your brain explode with excitement.{" "}
                             <br />
-                            Together, we'll create, collaborate, and conquer the
+                            Together, we&apos;ll create, collaborate, and conquer the
                             future!
                         </span>
                     </section>
