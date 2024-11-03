@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Projects = () => {
     const [projects, setProjects] = useState([
@@ -53,37 +54,43 @@ const Projects = () => {
                             />
                         )}
                         <div className="absolute inset-0 bg-black/60 flex flex-col p-6 pt-12">
-                            <h3 className="text-background text-6xl text-center font-bold mb-4">
+                            <h3 className="text-background text-4xl md:text-6xl text-center font-bold mb-4">
                                 {project.title}
                             </h3>
-                            <p className="text-tertiary text-2xl text-center font-bold mb-4">
+                            <p className="text-tertiary text-xl md:text-2xl text-center font-bold mb-4">
                                 &lt; {project.domain} &gt;
                             </p>
-                            <p className="text-background text-sm opacity-50 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden line-clamp-4 group-hover:line-clamp-none">
+                            <p className="text-background text-xs md:text-sm opacity-50 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden line-clamp-4 group-hover:line-clamp-none">
                                 {project.description}
                             </p>
                             <div className="flex justify-between mt-auto">
-                                <a
+                                <Link
                                     href={project.link}
-                                    className="text-background text-xl font-bold mt-auto relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-background after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full"
+                                    className="text-background text-lg md:text-xl font-bold mt-auto relative after:content-[&apos;&apos;] after:absolute after:w-0 after:h-[2px] after:bg-background after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full"
                                 >
                                     Learn More
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href={project.github}
                                     className="text-background text-xl font-bold mt-auto"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    <img
+                                    <Image
                                         src="/github-mark.png"
                                         alt="Github"
-                                        className="w-10 h-10 opacity-100 group-hover:opacity-0 absolute transition-opacity duration-300"
+                                        width={40}
+                                        height={40}
+                                        className="w-8 md:w-10 h-8 md:h-10 opacity-100 group-hover:opacity-0 absolute transition-opacity duration-300"
                                     />
-                                    <img
+                                    <Image
                                         src="/github-mark-white.png"
                                         alt="Github"
-                                        className="w-10 h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        width={40}
+                                        height={40}
+                                        className="w-8 md:w-10 h-8 md:h-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                     />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
