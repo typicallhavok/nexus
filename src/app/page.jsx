@@ -5,6 +5,7 @@ import FAQ from "./components/FAQ";
 import Description from "./components/Description";
 import Projects from "./components/Projects";
 import Events from "./components/Events";
+import Contact from "./components/Contact";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -42,10 +43,13 @@ const Home = () => {
                             Nexus
                         </span>
                     </a>
-                    <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div className="flex md:order-2">
                         <button
+                            onClick={() => {
+                                window.location.href = "#contact";
+                            }}
                             type="button"
-                            className="text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary rounded-lg text-sm p-4 hover:bg-secondary hover:text-foreground transition-all duration-300 ease-in-out text-center font-bold"
+                            className="text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary rounded-lg text-sm px-3 py-2 md:p-4 hover:bg-secondary hover:text-foreground transition-all duration-300 ease-in-out text-center font-bold"
                         >
                             Join Us
                         </button>
@@ -103,23 +107,22 @@ const Home = () => {
                             muted
                             playsInline
                         />
-                        <span className="text-8xl font-bold text-center text-tertiary absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <span className="text-4xl md:text-8xl font-bold text-center text-tertiary absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                             NEXUS
                         </span>
-                        <span className="text-2xl text-center text-white absolute top-[78%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                            Unleashing Creativity and Innovation in PES
-                            University
+                        <span className="text-lg md:text-2xl text-center text-white absolute top-[78%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 px-4">
+                            Unleashing Creativity and Innovation in PES University
                         </span>
                         <button className="text-white border-2 border-tertiary rounded-[2rem] text-lg px-8 py-4 text-center font-bold absolute top-[87%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                             Get Started
                         </button>
                     </section>
-                    <section className="h-auto w-full flex items-top justify-center mt-20 mb-20">
-                        <span className="text-5xl font-bold text-right text-tertiary w-1/2">
+                    <section className="h-auto w-full flex flex-col md:flex-row items-center md:items-top justify-center mt-20 mb-20 px-4">
+                        <span className="text-3xl md:text-5xl font-bold text-center md:text-right text-tertiary w-full md:w-1/2 mb-8 md:mb-0">
                             Unlocking Tomorrow's <br />
                             Technology Today!
                         </span>
-                        <span className="text-2xl text-left text-foreground ml-20 w-1/2">
+                        <span className="text-lg md:text-2xl text-center md:text-left text-foreground md:ml-20 w-full md:w-1/2">
                             Charting the Course of Innovation: Spearheading{" "}
                             <br />
                             Revolutionary Advancements and Transformations in{" "}
@@ -144,12 +147,12 @@ const Home = () => {
                         </span>
                     </section>
                 </div>
-                <div id="about" className="mt-16 pt-20 bg-skin">
+                <div id="about" className="mt-16 py-20 bg-skin">
                     <Description />
                     <Reviews />
                     <FAQ />
                 </div>
-                <div id="projects">
+                <div id="projects" className="pt-8">
                     <Projects />
                     <div className="relative flex overflow-hidden bg-background py-4 w-full">
                         <div className="animate-marquee3 whitespace-nowrap">
@@ -168,7 +171,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-around items-center py-16 bg-background px-[25%]">
+                    <div className="flex flex-col md:flex-row justify-around items-center pt-8 bg-background px-4 md:px-[25%] space-y-8 md:space-y-0">
                         {[
                             { number: "50+", label: "Active Members" },
                             { number: "50+", label: "Exciting Events" },
@@ -185,11 +188,63 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div id="events">
+                <div id="events" className="mt-8 pt-8">
                     <Events />
                 </div>
-                
+                <div id="contact" className="mt-6 px-8 pt-8 bg-skin">
+                    <Contact />
+                </div>
             </main>
+            <footer className="bg-black text-white py-8 px-4 md:px-8">
+                <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div className="text-sm">
+                        © 2024 Nexus Club. All rights reserved.
+                    </div>
+                    <div className="flex gap-4">
+                        <a 
+                            href="#contact" 
+                            className="text-sm relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-gray-300 after:transition-all after:duration-300"
+                        >
+                            Contact us
+                        </a>
+                        <a 
+                            href="https://github.com/Nexus-PES" 
+                            className="relative w-6 h-6 mt-[-3px] group"
+                        >
+                            <img 
+                                src="/github-mark.png" 
+                                alt="Github" 
+                                className="w-6 h-6 absolute transition-opacity duration-300 group-hover:opacity-0"
+                            />
+                            <img 
+                                src="/github-mark-white.png" 
+                                alt="Github" 
+                                className="w-6 h-6 absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                            />
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/company/nexus-pes/" 
+                            className="relative w-8 h-8 mt-[-3px]"
+                        >
+                            <img 
+                                src="/linked.png"
+                                alt="LinkedIn" 
+                                className="w-7 h-6 absolute transition-opacity duration-300 brightness-0 invert opacity-70 hover:opacity-100"
+                            />
+                        </a>
+                        <a 
+                            href="https://www.instagram.com/nexus.pesu/" 
+                            className="relative w-6 h-6 mt-[-3px]"
+                        >
+                            <img 
+                                src="/ig.png"
+                                alt="Instagram" 
+                                className="w-6 h-6 absolute transition-opacity duration-300 brightness-0 invert opacity-70 hover:opacity-100"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 };

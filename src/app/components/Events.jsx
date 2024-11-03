@@ -31,7 +31,7 @@ const Events = () => {
 
     return (
         <div className="bg-background min-h-screen py-16">
-            <h1 className="text-6xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Events</h1>
+            <h1 className="text-6xl font-bold text-center mb-12">Events</h1>
             <div className="flex flex-col gap-8 max-w-6xl mx-auto px-4">
                 {events.map((event, index) => (
                     <div 
