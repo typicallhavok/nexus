@@ -131,7 +131,7 @@ const Home = () => {
                         <span className="text-base md:text-2xl text-center text-white absolute top-[78%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 px-4">
                             Unleashing Creativity and Innovation in PES University
                         </span>
-                        <button className="text-white border-2 border-tertiary rounded-[2rem] text-base md:text-lg px-6 md:px-8 py-3 md:py-4 text-center font-bold absolute top-[87%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <button onClick={() => window.location.href = "#about"} className="text-white border-2 border-tertiary rounded-[2rem] text-base md:text-lg px-6 md:px-8 py-3 md:py-4 text-center font-bold absolute top-[87%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                             Get Started
                         </button>
                     </section>
