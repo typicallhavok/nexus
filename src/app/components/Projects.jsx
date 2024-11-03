@@ -58,7 +58,7 @@ const Projects = () => {
                                 {project.title}
                             </h3>
                             <p className="text-tertiary text-xl md:text-2xl text-center font-bold mb-4">
-                                &lt; {project.domain} &gt;
+                                &lt; {project.domain} /&gt;
                             </p>
                             <p className="text-background text-xs md:text-sm opacity-50 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden line-clamp-4 group-hover:line-clamp-none">
                                 {project.description}
