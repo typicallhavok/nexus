@@ -133,36 +133,21 @@ const Home = () => {
             <main>
                 <div id="home">
                     <section className="h-screen relative">
-                        <video
-                            className="w-screen h-screen object-cover absolute top-0 left-0 z-[-1]"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            poster="/video-poster.jpg"
-                            onLoadedData={(e) => {
-                                const video = e.target;
-                                if (video.buffered.length > 0) {
-                                    const bufferedTime = video.buffered.end(0);
-                                    const duration = video.duration;
-                                    if (bufferedTime / duration >= 0.25) {
-                                        setIsVideoLoading(false);
-                                    } else {
-                                        const checkBuffer = setInterval(() => {
-                                            const bufferedTime = video.buffered.end(0);
-                                            if (bufferedTime / duration >= 0.25) {
-                                                setIsVideoLoading(false);
-                                                clearInterval(checkBuffer);
-                                            }
-                                        }, 1000);
-                                    }
-                                }
-                            }}
-                        >
-                            <source src="intro.webm" type="video/webm" />
-                            <source src="intro.mp4" type="video/mp4" />
-                        </video>
+                        <div className="relative h-screen w-screen overflow-hidden" style={{ overflowX: 'hidden' }}>
+                            <div className="absolute top-1/2 left-1/2 w-[100%] h-[150%] -translate-x-1/2 -translate-y-1/2" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none', '::WebkitScrollbar': { display: 'none' } }}>
+                                <iframe
+                                    className="w-[100%] h-[100%] absolute top-0 left-0 z-[-1]"
+                                    src="https://www.youtube.com/embed/FnFpNIREV78?autoplay=1&mute=1&loop=1&playlist=FnFpNIREV78&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&version=3&playerapiid=ytplayer"
+                                    title="Background video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    onLoad={() => setIsVideoLoading(false)}
+                                    style={{
+                                        pointerEvents: 'none',
+                                        border: 'none'
+                                    }}
+                                ></iframe>
+                            </div>
+                        </div>
                         <span className="text-3xl md:text-8xl font-bold text-center text-tertiary absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                             NEXUS
                         </span>
