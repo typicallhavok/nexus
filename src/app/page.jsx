@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showBackToTop, setShowBackToTop] = useState(false);
+    const [isVideoLoading, setIsVideoLoading] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -124,17 +125,44 @@ const Home = () => {
                     </div>
                 </div>
             </nav>
+            {isVideoLoading && (
+                <div className="fixed inset-0 bg-background z-50 flex items-center justify-center">
+                    <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            )}
             <main>
                 <div id="home">
                     <section className="h-screen relative">
                         <video
-                            src="intro.mp4"
                             className="w-screen h-screen object-cover absolute top-0 left-0 z-[-1]"
                             autoPlay
                             loop
                             muted
                             playsInline
-                        />
+                            preload="auto"
+                            poster="/video-poster.jpg"
+                            onLoadedData={(e) => {
+                                const video = e.target;
+                                if (video.buffered.length > 0) {
+                                    const bufferedTime = video.buffered.end(0);
+                                    const duration = video.duration;
+                                    if (bufferedTime / duration >= 0.5) {
+                                        setIsVideoLoading(false);
+                                    } else {
+                                        const checkBuffer = setInterval(() => {
+                                            const bufferedTime = video.buffered.end(0);
+                                            if (bufferedTime / duration >= 0.5) {
+                                                setIsVideoLoading(false);
+                                                clearInterval(checkBuffer);
+                                            }
+                                        }, 1000);
+                                    }
+                                }
+                            }}
+                        >
+                            <source src="intro.webm" type="video/webm" />
+                            <source src="intro.mp4" type="video/mp4" />
+                        </video>
                         <span className="text-3xl md:text-8xl font-bold text-center text-tertiary absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                             NEXUS
                         </span>
