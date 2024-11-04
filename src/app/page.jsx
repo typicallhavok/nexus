@@ -146,12 +146,12 @@ const Home = () => {
                                 if (video.buffered.length > 0) {
                                     const bufferedTime = video.buffered.end(0);
                                     const duration = video.duration;
-                                    if (bufferedTime / duration >= 0.5) {
+                                    if (bufferedTime / duration >= 0.25) {
                                         setIsVideoLoading(false);
                                     } else {
                                         const checkBuffer = setInterval(() => {
                                             const bufferedTime = video.buffered.end(0);
-                                            if (bufferedTime / duration >= 0.5) {
+                                            if (bufferedTime / duration >= 0.25) {
                                                 setIsVideoLoading(false);
                                                 clearInterval(checkBuffer);
                                             }
