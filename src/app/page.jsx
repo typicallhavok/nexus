@@ -137,7 +137,7 @@ const Home = () => {
                             <div className="absolute top-1/2 left-1/2 w-[100%] h-[150%] -translate-x-1/2 -translate-y-1/2" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none', '::WebkitScrollbar': { display: 'none' } }}>
                                 <iframe
                                     className="w-[100%] h-[100%] absolute top-0 left-0 z-[-1]"
-                                    src="https://www.youtube.com/embed/FnFpNIREV78?autoplay=1&mute=1&loop=1&playlist=FnFpNIREV78&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&version=3&playerapiid=ytplayer"
+                                    src="https://www.youtube.com/embed/FnFpNIREV78?autoplay=1&mute=1&loop=1&playlist=FnFpNIREV78&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&version=3&playerapiid=ytplayer&vq=hd1080"
                                     title="Background video"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     onLoad={() => setIsVideoLoading(false)}
